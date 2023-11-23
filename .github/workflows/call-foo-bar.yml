@@ -1,0 +1,17 @@
+name: Bar
+
+on:
+  workflow_call:
+    inputs:
+      value:
+        required: true
+        type: string
+
+jobs:
+  foo:
+    if: inputs.value == 'foo' 
+    uses: ./.github/workflows/foo.yml
+
+  bar:
+    if: inputs.value == 'bar' 
+    uses: ./.github/workflows/bar.yml
