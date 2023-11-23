@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         target: [foo, bar]
-    uses: ./.github/workflows/call-foo-bar.yml
+    uses: ./.github/workflows/foofoobarbar.yml
     with:
       value: ${{ matrix.target }}
 
