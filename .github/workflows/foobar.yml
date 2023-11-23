@@ -1,4 +1,4 @@
-name: Call a reusable workflow
+name: Foo bar? Bar foo!
 
 on: ['push']
 
