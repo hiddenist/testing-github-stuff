@@ -1,10 +1,10 @@
-name: Bar
+name: Foo
 
 on:
   workflow_call:
 
 jobs:
-  bar:
+  foo:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "bar"
+      - run: echo "foo"
