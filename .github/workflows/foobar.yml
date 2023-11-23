@@ -13,8 +13,8 @@ jobs:
 
   foo:
     needs: foobar
-    uses: ./.github/workflows/foo.yml
+    uses: ./.github/workflows/bar.yml
 
   bar:
     needs: foobar
-    uses: ./.github/workflows/bar.yml
+    uses: ./.github/workflows/foo.yml
