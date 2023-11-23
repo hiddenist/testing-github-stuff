@@ -3,7 +3,7 @@ name: Call a reusable workflow
 on: ['push']
 
 jobs:
-  call-matrix-workflows:
+  foobar:
     strategy:
       matrix:
         target: [foo, bar]
@@ -11,8 +11,10 @@ jobs:
     with:
       value: ${{ matrix.target }}
 
-  top-level-foo:
+  foo:
+    needs: foobar
     uses: ./.github/workflows/foo.yml
 
-  top-level-bar:
+  bar:
+    needs: foobar
     uses: ./.github/workflows/bar.yml
