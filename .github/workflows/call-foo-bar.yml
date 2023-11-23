@@ -9,9 +9,9 @@ on:
 
 jobs:
   foo:
-    if: inputs.value == 'foo' 
+    if: inputs.value == 'bar' 
     uses: ./.github/workflows/foo.yml
 
   bar:
-    if: inputs.value == 'bar' 
+    if: inputs.value == 'foo' 
     uses: ./.github/workflows/bar.yml
