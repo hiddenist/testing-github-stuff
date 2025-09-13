@@ -1,0 +1,23 @@
+name: Get ISO date output
+
+on:
+  workflow_dispatch:
+    inputs:
+        date_string:
+            description: "Date string"
+            required: true
+
+
+jobs:
+  get-date:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get date
+        env:
+            DATE_STRING: ${{ github.event.inputs.date_string }}
+        run: |
+            date_output=$(date -u -d "$DATE_STRING" '+%Y-%m-%dT%H:%M:%SZ')
+            echo "$date_output"
+            echo "## Date Output" >> $GITHUB_STEP_SUMMARY
+            echo "Input: \`$DATE_STRING\`" >> $GITHUB_STEP_SUMMARY
+            echo "UTC ISO: \`$date_output\`" >> $GITHUB_STEP_SUMMARY
